@@ -1,55 +1,52 @@
-
-export default function generateAbsurdJoke(dataset1, dataset2, trend1, trend2) {
-
-    const templates = {
-        "increasing-increasing": [
-            `Both ${dataset1} and ${dataset2} are skyrocketing. Experts suspect a friendship pact.`,
-            `${dataset1} and ${dataset2} are racing upwards like two caffeinated squirrels.`,
-            `Both ${dataset1} and ${dataset2} are going up. They're trying to escape the chart entirely and live in the real world.`,
-            `The only explanation for ${dataset1} and ${dataset2} rising together is that they've discovered a shared love of helium balloons.`
+export default function generateAbsurdJoke(dataset1, dataset2) {
+    const specificJokes = {
+        "UFO Sightings|Divorce Rates": [
+            "It's clear, isn't it? As alien visits have decreased, so has their invaluable intergalactic marriage counseling. Turns out, 'I saw an alien' was the ultimate get-out-of-an-argument card. With the aliens gone, couples are now forced to face their problems head-on, with predictable, tragic results. We must increase UFO sightings—for the sake of love!",
+            "Marriages on Earth were thriving as long as aliens were around to mediate. Now, without UFOs hovering above, humans are left to argue about who left the dishes in the sink—and the divorce rates skyrocket.",
+            "The pattern is obvious: fewer UFO sightings mean fewer alien honeymoon packages. Humans are terrible at keeping the spark alive without extraterrestrial intervention."
         ],
-        "increasing-decreasing": [
-            `As ${dataset1} rises, ${dataset2} plummets. Clearly, ${dataset1} is stealing ${dataset2}'s energy.`,
-            `${dataset1} is bullying ${dataset2} down the slope. Nature is unfair.`,
-            `${dataset1} is rising and ${dataset2} is falling. Scientists have confirmed that ${dataset1} has stolen ${dataset2}'s lucky socks.`,
-            `I've been watching this for a while. ${dataset1} is clearly on a sugar high and just pushed ${dataset2} down the stairs.`
+        "Ice Cream Sales|Shark Attacks": [
+            "Correlation, my friends, is causation! It's not the warm weather that makes people buy ice cream and go to the beach—it's the ice cream itself that's attracting the sharks.",
+            "Every summer, sharks gather in secret conferences, plotting their next attacks based on the annual ice cream trends. More cones = more chaos in the waves.",
+            "Forget sunscreen—what you really need at the beach is shark insurance if you're eating ice cream. That vanilla trail in the ocean is basically a five-star buffet signal."
         ],
-        "decreasing-increasing": [
-            `As ${dataset1} declines, ${dataset2} rises to power. Economists are calling this the "See-Saw Effect".`,
-            `${dataset2} is thriving off the downfall of ${dataset1}. Survival of the funniest.`,
-            `The great decline of ${dataset1} has created a vacuum of power, which ${dataset2} has filled with extreme prejudice.`,
-            `As ${dataset1} gracefully exits the stage, ${dataset2} is doing a triumphant jig on its grave.`
+        "Pirates|Global Temperature": [
+            "The data is irrefutable! As the number of swashbuckling pirates on the high seas has dwindled, the global average temperature has skyrocketed.",
+            "Global warming is just the ocean pouting because no one is singing sea shanties anymore. More pirates = cooler planet.",
+            "Every pirate that retires takes a cold breeze with them. If we want glaciers back, we need pirate internships for Gen Z."
         ],
-        "decreasing-decreasing": [
-            `Both ${dataset1} and ${dataset2} are sinking together. This is a classic double-depression graph.`,
-            `${dataset1} and ${dataset2} are free-falling hand-in-hand, true statistical love.`,
-            `Both ${dataset1} and ${dataset2} are crashing hard. The last data point was a tiny violin playing a sad song.`,
-            `Don't worry about ${dataset1} and ${dataset2}. They're just practicing for their synchronized diving competition.`
+        "Video Game Sales|Japan Birth Rate": [
+            "This is a serious matter of national security! As video game sales in Japan have surged, the birth rate has plummeted.",
+            "Each new console launch seems to trade one baby for ten million XP points. Science is baffled, gamers are thrilled.",
+            "Researchers found that boss fights and diapers simply can't coexist. Respawn rates are inversely proportional to birth rates."
         ],
-        "stable-stable": [
-            `Both ${dataset1} and ${dataset2} refuse to change. Probably plotting a coup.`,
-            `These datasets are so lazy, they might start collecting unemployment benefits.`,
-            `${dataset1} and ${dataset2} are so stable, you could balance a cup of coffee on them. I dare you to try.`,
-            `These datasets have achieved peak zen. They're just floating there, refusing to participate in the chaos of the universe.`
-        ],
-        "stable-decreasing": [
-            `${dataset1} is perfectly still, watching ${dataset2} plummet. What a great friend.`,
-            `As ${dataset2} falls off the chart, ${dataset1} simply blinks, unwavering.`,
-            `${dataset1} and ${dataset2} have a difficult relationship. ${dataset1} is in a coma, while ${dataset2} is on a rollercoaster.`
-        ],
-        "stable-increasing": [
-            `${dataset1} is holding the rope for ${dataset2}'s dramatic climb.`,
-            `${dataset2} is taking all the credit for the upward trend, while ${dataset1} just sits there, being a supportive floor.`,
-            `${dataset1} is the foundation, and ${dataset2} is building a ridiculously tall tower on it.`
+        "Nicolas Cage Movies|Swimming Pool Drownings": [
+            "The data is, in a word, chaotic. Much like the career of Nicolas Cage himself. As the number of his movies fluctuates, so too does the number of swimming pool drownings.",
+            "Every time a new Nicolas Cage movie drops, lifeguards hold their breath. No one knows why, but the pools get cursed with chaos energy.",
+            "Scientists have discovered a mysterious 'Cage Effect': too few movies and the waters calm, too many and the pools become cinematic whirlpools."
         ]
     };
 
-    // Construct a key from the two trend strings (e.g., "increasing-decreasing").
-    const key = `${trend1}-${trend2}`;
+    // Construct keys for lookup (both orders)
+    const key1 = `${dataset1}|${dataset2}`;
+    const key2 = `${dataset2}|${dataset1}`;
 
-    // Get the array of jokes for the constructed key, with a fallback joke if the key doesn't exist.
-    const availableTemplates = templates[key] || [`${dataset1} and ${dataset2} are acting weird today.`];
+    // If a specific joke exists for the pair, pick a random one
+    const jokes = specificJokes[key1] || specificJokes[key2];
+    if (jokes) {
+        return jokes[Math.floor(Math.random() * jokes.length)];
+    }
 
-    // Select a random joke from the array and return it.
-    return availableTemplates[Math.floor(Math.random() * availableTemplates.length)];
+    // Generic absurd joke templates for any random combo
+    const genericTemplates = [
+        `Experts are baffled: as ${dataset1} rises, ${dataset2} reacts like a jealous sibling. Someone call the data counselors!`,
+        `The latest research shows a perfect correlation between ${dataset1} and ${dataset2}. Coincidence? Or is someone bribing the chart?`,
+        `As ${dataset1} wobbles, ${dataset2} stumbles after it like a loyal puppy. Economists call this 'chaotic friendship'.`,
+        `Clearly, ${dataset1} is whispering secrets to ${dataset2} at night, because their graphs are practically dancing together.`,
+        `Scientists now believe ${dataset1} directly controls ${dataset2} using Wi-Fi signals and interpretive dance.`,
+        `The surge in ${dataset1} perfectly explains the weird behavior of ${dataset2}. We don’t know why—it just feels right.`
+    ];
+
+    // Pick a random generic joke
+    return genericTemplates[Math.floor(Math.random() * genericTemplates.length)];
 }
