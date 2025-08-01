@@ -16,11 +16,20 @@ function Hero() {
         setSelectedData2('');
         console.log('cleared the data',setSelectedData2,setSelectedData1);
     }
+    const randomSelection=()=>{
+        const options=ComboDatas.map(item=>item.name)
+
+        const randomData1=options[Math.floor(Math.random() * options.length)]
+        const randomData2=options[Math.floor(Math.random() * options.length)]
+
+        setSelectedData1(randomData1);
+        setSelectedData2(randomData2);
+    }
 
     return (
         <div
             className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-violet-600 via-violet-600 to-indigo-600  p-6">
-            <div className="w-full max-w-2xl text-center bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl p-8 ">
+            <div className="w-full max-w-2xl text-center justify-center items-center bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl p-8 ">
                 <Header title="Correlation Confusion"/>
                 <SubHeadings text="Lets the find the relationship btw something that doesn't have any relationship."/>
                 <div className="flex items-center justify-around p-3 gap-3">
@@ -28,10 +37,13 @@ function Hero() {
                     <ComboBox placeholder="Select a data" options={ComboDatas.map(item => item.name)} value={selectedData2} onChange={setSelectedData2} />
                 </div>
                 <div className="flex items-center justify-around p-3 gap-3">
-                    <Button text="Random" icon={Shuffle} gradient="bg-gradient-to-r from-cyan-500 to-blue-500  hover:from-blue-500 hover:to-blue-300" />
-                    <Button text="Plot" icon={ChartLine} gradient="bg-gradient-to-r from-green-500 to-emerald-700 hover:from-green-500 hover:to-emerald-300" />
+                    <Button text="Random" icon={Shuffle} gradient="bg-gradient-to-r from-cyan-500 to-blue-500  hover:from-blue-500 hover:to-blue-300"  onClick={randomSelection}/>
                     <Button text="Clear Selection" icon={Eraser} gradient="bg-gradient-to-r from-red-800 to-red-500 hover:from-red-500 hover:red-300" onClick={clearSelection} />
                 </div>
+                <div className="flex items-center justify-around p-3 gap-3">
+                    <Button text="Plot" icon={ChartLine} gradient="bg-gradient-to-r from-green-500 to-emerald-700 hover:from-green-500 hover:to-emerald-300 " />
+                </div>
+
             </div>
         </div>
     );
