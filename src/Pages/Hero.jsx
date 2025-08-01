@@ -8,6 +8,7 @@ import { Shuffle, ChartLine, Eraser } from "lucide-react";
 import ChartComponent from "../components/ChartComponent.jsx";
 import generateAbsurdJoke from "../Datas/utils/generateAbsurdJoke.js";
 import OutroText from "../components/OutroText.jsx";
+import TwistClock from "../components/TwistClock.jsx";
 
 function Hero() {
     const [selectedData1, setSelectedData1] = useState('');
@@ -111,7 +112,7 @@ function Hero() {
                     <ChartComponent data1={plottedData.data1} data2={plottedData.data2} />
                 </div>
 
-                {/* Advice Section */}
+
                 {plotPresent && (
                     <div className="p-4 text-green-400 font-mono mt-4 sm:mt-6 w-full overflow-x-auto">
                         <div className="flex flex-col items-start space-y-3">
@@ -125,6 +126,7 @@ function Hero() {
                         </div>
                     </div>
                 )}
+                <TwistClock/>
             </div>
         </div>
     );
