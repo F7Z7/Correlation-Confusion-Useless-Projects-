@@ -1,22 +1,21 @@
 import React, {useState} from 'react';
 
-function ComboBox({options = [], placeholder = 'Select an option...', onChange, className = ''}) {
+function ComboBox({options = [], placeholder = 'Select an option...', onChange, value = ''}) {
     const [selected, setSelected] = useState('');
 
     const handleSelect = (event) => {
         const value = event.target.value;
-        setSelected(value);
+
         if (onChange) {
-            // Pass  the value
-            onChange(options[value]);
+            onChange(value);
         }
     };
 
     return (
-        <div className={`relative inline-block ${className}`}>
+        <div className="relative inline-block">
             <select
                 onChange={handleSelect}
-                value={selected}
+                value={value}
                 className=" appearance-none bg-white/30 w-full text-white rounded-lg  px-4 py-3 pr-10 min-w-48 cursor-pointer shadow-sm  transition-colors duration-200  border border-white hover:border-white/30
                     focus:outline-none
                     focus:ring-2
@@ -29,7 +28,7 @@ function ComboBox({options = [], placeholder = 'Select an option...', onChange, 
                 {options.map((option, i) => (
                     <option
                         key={i}
-                        value={i}
+                        value={option}
                         className="bg-white/90 text-black"
                     >
                         {option}
