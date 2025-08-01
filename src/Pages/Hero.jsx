@@ -4,28 +4,29 @@ import SubHeadings from "../components/SubHeadings.jsx";
 import ComboBox from "../components/ComboBox.jsx";
 import ComboDatas from "../Datas/ComboDatas.jsx";
 import Button from "../components/Button.jsx";
-import { Shuffle,ChartLine,Eraser } from "lucide-react";
+import {Shuffle, ChartLine, Eraser} from "lucide-react";
 import ChartComponent from "../components/ChartComponent.jsx";
 
 
 function Hero() {
     const [selectedData1, setSelectedData1] = useState('');
     const [selectedData2, setSelectedData2] = useState('');
-    const [plottedData, setPlottedData] = useState({ data1: null, data2: null });
+    const [plottedData, setPlottedData] = useState({data1: null, data2: null});
+    const [plotPresent, setPlotPresent] = useState(false);
 
 
     const clearSelection = () => {
         setSelectedData1('');
         setSelectedData2('');
-        setPlottedData({ data1: null, data2: null });
-
-        console.log('cleared the data',setSelectedData2,setSelectedData1);
+        setPlottedData({data1: null, data2: null});
+        setPlotPresent(false);
+        console.log('cleared the data', setSelectedData2, setSelectedData1);
     }
-    const randomSelection=()=>{
-        const options=ComboDatas.map(item=>item.name)
+    const randomSelection = () => {
+        const options = ComboDatas.map(item => item.name)
 
-        const randomData1=options[Math.floor(Math.random() * options.length)]
-        const randomData2=options[Math.floor(Math.random() * options.length)]
+        const randomData1 = options[Math.floor(Math.random() * options.length)]
+        const randomData2 = options[Math.floor(Math.random() * options.length)]
 
         setSelectedData1(randomData1);
         setSelectedData2(randomData2);
@@ -34,9 +35,11 @@ function Hero() {
         const dataPoints1 = ComboDatas.find(item => item.name === selectedData1);
         const dataPoints2 = ComboDatas.find(item => item.name === selectedData2);
 
+        setPlotPresent(true);
+
         setPlottedData({
-            data1: dataPoints1 ||  null,
-            data2: dataPoints2 ||  null,
+            data1: dataPoints1 || null,
+            data2: dataPoints2 || null,
         })
     }
 
@@ -49,7 +52,7 @@ function Hero() {
                 <SubHeadings text="Lets the find the relationship btw something that doesn't have any relationship."/>
                 <div className="flex items-center justify-around p-3 gap-3">
                     <ComboBox placeholder="Select a data" options={ComboDatas.map(item => item.name)}
-                              value={selectedData1} onChange={setSelectedData1} />
+                              value={selectedData1} onChange={setSelectedData1}/>
                     <ComboBox placeholder="Select a data" options={ComboDatas.map(item => item.name)}
                               value={selectedData2} onChange={setSelectedData2}/>
                 </div>
@@ -69,6 +72,13 @@ function Hero() {
                 <div className="mt-8">
                     <ChartComponent data1={plottedData.data1} data2={plottedData.data2}/>
                 </div>
+                {plotPresent && (
+                    <div className="flex items-start ">
+                        <SubHeadings text="XPERT ADVICE"/>
+
+                    </div>
+                )}
+
             </div>
         </div>
     );
