@@ -18,9 +18,9 @@ function Hero() {
                     <ComboBox placeholder="Select a data" options={ComboDatas.map(item => item.name)}/>
                 </div>
                 <div className="flex items-center justify-around p-3 gap-3">
-                    <Button text="Random" icon={Shuffle} />
-                    <Button text="Plot" icon={ChartLine} />
-                    <Button text="Clear Selection" icon={Eraser}/>
+                    <Button text="Random" icon={Shuffle} gradient="bg-gradient-to-r from-cyan-500 to-blue-500  hover:bg-blue-600" />
+                    <Button text="Plot" icon={ChartLine} gradient="bg-gradient-to-r from-green-500 to-emerald-700 hover:from-green-600 hover:to-emerald-800" />
+                    <Button text="Clear Selection" icon={Eraser} gradient="bg-gradient-to-r from-red-800 to-gray-900 hover:from-gray-700 hover:to-red-800"/>
                 </div>
             </div>
         </div>
