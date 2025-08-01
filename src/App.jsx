@@ -18,8 +18,6 @@ function App() {
                     smooth={true}
                 />
             </div>
-
-
             <Hero/>
         </div>
     )

@@ -1,194 +1,145 @@
 import React from 'react';
 
-// This array contains sample data points for various categories,
-// with a common year range from 2000 to 2024.
-const DataPoints = [
+// Absurd correlation datasets for Correlation Confusion
+// All values normalized to a 1–10 scale for fun visual vibe
+const ComboDatas = [
+    // 1. UFO Sightings (1–10 scale)
     {
         name: "UFO Sightings",
         dataKey: "ufo_sightings_data",
         data: [
-            { year: 2000, value: 500 },
-            { year: 2001, value: 550 },
-            { year: 2002, value: 620 },
-            { year: 2003, value: 700 },
-            { year: 2004, value: 850 },
-            { year: 2005, value: 1000 },
-            { year: 2006, value: 950 },
-            { year: 2007, value: 1100 },
-            { year: 2008, value: 1300 },
-            { year: 2009, value: 1500 },
-            { year: 2010, value: 1450 },
-            { year: 2011, value: 1600 },
-            { year: 2012, value: 1800 },
-            { year: 2013, value: 1950 },
-            { year: 2014, value: 2100 },
-            { year: 2015, value: 2300 },
-            { year: 2016, value: 2200 },
-            { year: 2017, value: 2400 },
-            { year: 2018, value: 2600 },
-            { year: 2019, value: 2800 },
-            { year: 2020, value: 2900 },
-            { year: 2021, value: 3100 },
-            { year: 2022, value: 3000 },
-            { year: 2023, value: 3200 },
-            { year: 2024, value: 3500 },
+            { year: 2000, value: 2 },
+            { year: 2001, value: 2 },
+            { year: 2002, value: 3 },
+            { year: 2003, value: 3 },
+            { year: 2004, value: 4 },
+            { year: 2005, value: 5 },
+            { year: 2006, value: 5 },
+            { year: 2007, value: 6 },
+            { year: 2008, value: 6 },
+            { year: 2009, value: 7 },
+            { year: 2010, value: 7 },
+            { year: 2011, value: 8 },
+            { year: 2012, value: 8 },
+            { year: 2013, value: 8 },
+            { year: 2014, value: 9 },
+            { year: 2015, value: 9 },
+            { year: 2016, value: 8 },
+            { year: 2017, value: 9 },
+            { year: 2018, value: 9 },
+            { year: 2019, value: 10 },
+            { year: 2020, value: 10 },
+            { year: 2021, value: 9 },
+            { year: 2022, value: 9 },
+            { year: 2023, value: 10 },
+            { year: 2024, value: 10 },
         ]
     },
+
+    // 2. Divorce Rates (inverse of UFOs for fun)
     {
         name: "Divorce Rates",
         dataKey: "divorce_rates_data",
         data: [
-            { year: 2000, value: 4.2 },
-            { year: 2001, value: 4.1 },
-            { year: 2002, value: 4.0 },
-            { year: 2003, value: 3.9 },
-            { year: 2004, value: 3.8 },
-            { year: 2005, value: 3.7 },
-            { year: 2006, value: 3.6 },
-            { year: 2007, value: 3.5 },
-            { year: 2008, value: 3.4 },
-            { year: 2009, value: 3.3 },
-            { year: 2010, value: 3.2 },
-            { year: 2011, value: 3.1 },
-            { year: 2012, value: 3.0 },
-            { year: 2013, value: 2.9 },
-            { year: 2014, value: 2.8 },
-            { year: 2015, value: 2.7 },
-            { year: 2016, value: 2.6 },
-            { year: 2017, value: 2.5 },
-            { year: 2018, value: 2.4 },
-            { year: 2019, value: 2.3 },
-            { year: 2020, value: 2.2 },
-            { year: 2021, value: 2.1 },
-            { year: 2022, value: 2.0 },
-            { year: 2023, value: 1.9 },
-            { year: 2024, value: 1.8 },
-        ]
-    },
-    {
-        name: "Per Capita Cheese Consumption",
-        dataKey: "cheese_consumption_data",
-        data: [
-            { year: 2000, value: 29.8 },
-            { year: 2001, value: 30.5 },
-            { year: 2002, value: 31.0 },
-            { year: 2003, value: 31.8 },
-            { year: 2004, value: 32.5 },
-            { year: 2005, value: 33.2 },
-            { year: 2006, value: 34.0 },
-            { year: 2007, value: 34.5 },
-            { year: 2008, value: 35.1 },
-            { year: 2009, value: 35.8 },
-            { year: 2010, value: 36.5 },
-            { year: 2011, value: 37.1 },
-            { year: 2012, value: 37.8 },
-            { year: 2013, value: 38.4 },
-            { year: 2014, value: 39.0 },
-            { year: 2015, value: 39.5 },
-            { year: 2016, value: 40.0 },
-            { year: 2017, value: 40.8 },
-            { year: 2018, value: 41.5 },
-            { year: 2019, value: 42.0 },
-            { year: 2020, value: 42.5 },
-            { year: 2021, value: 43.1 },
-            { year: 2022, value: 43.8 },
-            { year: 2023, value: 44.5 },
-            { year: 2024, value: 45.0 },
-        ]
-    },
-    {
-        name: "Number of movies Nicolas Cage has appeared in",
-        dataKey: "nicolas_cage_movies_data",
-        data: [
-            { year: 2000, value: 2 },
-            { year: 2001, value: 1 },
-            { year: 2002, value: 2 },
-            { year: 2003, value: 1 },
-            { year: 2004, value: 2 },
-            { year: 2005, value: 2 },
-            { year: 2006, value: 3 },
-            { year: 2007, value: 3 },
-            { year: 2008, value: 1 },
-            { year: 2009, value: 2 },
-            { year: 2010, value: 2 },
+            { year: 2000, value: 9 },
+            { year: 2001, value: 9 },
+            { year: 2002, value: 8 },
+            { year: 2003, value: 8 },
+            { year: 2004, value: 7 },
+            { year: 2005, value: 7 },
+            { year: 2006, value: 7 },
+            { year: 2007, value: 6 },
+            { year: 2008, value: 6 },
+            { year: 2009, value: 5 },
+            { year: 2010, value: 5 },
             { year: 2011, value: 4 },
-            { year: 2012, value: 3 },
-            { year: 2013, value: 2 },
-            { year: 2014, value: 4 },
-            { year: 2015, value: 4 },
+            { year: 2012, value: 4 },
+            { year: 2013, value: 4 },
+            { year: 2014, value: 3 },
+            { year: 2015, value: 3 },
             { year: 2016, value: 3 },
-            { year: 2017, value: 5 },
-            { year: 2018, value: 5 },
-            { year: 2019, value: 6 },
-            { year: 2020, value: 4 },
-            { year: 2021, value: 3 },
-            { year: 2022, value: 4 },
-            { year: 2023, value: 5 },
-            { year: 2024, value: 4 },
+            { year: 2017, value: 2 },
+            { year: 2018, value: 2 },
+            { year: 2019, value: 2 },
+            { year: 2020, value: 2 },
+            { year: 2021, value: 1 },
+            { year: 2022, value: 1 },
+            { year: 2023, value: 1 },
+            { year: 2024, value: 1 },
         ]
     },
+
+    // 3. Ice Cream Sales vs Shark Attacks (1–10)
     {
-        name: "Number of people who died from being tangled in their bedsheets",
-        dataKey: "bedsheet_deaths_data",
-        data: [
-            { year: 2000, value: 341 },
-            { year: 2001, value: 320 },
-            { year: 2002, value: 315 },
-            { year: 2003, value: 350 },
-            { year: 2004, value: 335 },
-            { year: 2005, value: 310 },
-            { year: 2006, value: 300 },
-            { year: 2007, value: 290 },
-            { year: 2008, value: 285 },
-            { year: 2009, value: 270 },
-            { year: 2010, value: 265 },
-            { year: 2011, value: 250 },
-            { year: 2012, value: 240 },
-            { year: 2013, value: 235 },
-            { year: 2014, value: 220 },
-            { year: 2015, value: 210 },
-            { year: 2016, value: 205 },
-            { year: 2017, value: 195 },
-            { year: 2018, value: 180 },
-            { year: 2019, value: 175 },
-            { year: 2020, value: 170 },
-            { year: 2021, value: 165 },
-            { year: 2022, value: 160 },
-            { year: 2023, value: 155 },
-            { year: 2024, value: 150 },
-        ]
+        name: "Ice Cream Sales",
+        dataKey: "ice_cream_sales_data",
+        data: Array.from({length: 25}, (_, i) => ({
+            year: 2000+i,
+            value: Math.min(10, 2 + Math.floor(i/3))
+        }))
     },
     {
-        name: "Per capita consumption of margarine",
-        dataKey: "margarine_consumption_data",
-        data: [
-            { year: 2000, value: 10.5 },
-            { year: 2001, value: 10.0 },
-            { year: 2002, value: 9.8 },
-            { year: 2003, value: 9.5 },
-            { year: 2004, value: 9.2 },
-            { year: 2005, value: 9.0 },
-            { year: 2006, value: 8.8 },
-            { year: 2007, value: 8.5 },
-            { year: 2008, value: 8.2 },
-            { year: 2009, value: 8.0 },
-            { year: 2010, value: 7.8 },
-            { year: 2011, value: 7.5 },
-            { year: 2012, value: 7.3 },
-            { year: 2013, value: 7.0 },
-            { year: 2014, value: 6.8 },
-            { year: 2015, value: 6.5 },
-            { year: 2016, value: 6.3 },
-            { year: 2017, value: 6.1 },
-            { year: 2018, value: 5.9 },
-            { year: 2019, value: 5.7 },
-            { year: 2020, value: 5.5 },
-            { year: 2021, value: 5.3 },
-            { year: 2022, value: 5.1 },
-            { year: 2023, value: 5.0 },
-            { year: 2024, value: 4.8 },
-        ]
-    }
+        name: "Shark Attacks",
+        dataKey: "shark_attacks_data",
+        data: Array.from({length: 25}, (_, i) => ({
+            year: 2000+i,
+            value: Math.min(10, 1 + Math.floor(i/4))
+        }))
+    },
+
+    // 4. Pirates vs Global Temperature (inverse)
+    {
+        name: "Number of Pirates",
+        dataKey: "pirates_count_data",
+        data: Array.from({length: 25}, (_, i) => ({
+            year: 2000+i,
+            value: Math.max(1, 10 - Math.floor(i/2))
+        }))
+    },
+    {
+        name: "Global Avg Temperature",
+        dataKey: "global_temperature_data",
+        data: Array.from({length: 25}, (_, i) => ({
+            year: 2000+i,
+            value: Math.min(10, 3 + Math.floor(i/3))
+        }))
+    },
+
+    // 5. Video Game Sales vs Birth Rate (inverse)
+    {
+        name: "Video Game Sales",
+        dataKey: "video_game_sales_data",
+        data: Array.from({length: 25}, (_, i) => ({
+            year: 2000+i,
+            value: Math.min(10, 2 + Math.floor(i/2))
+        }))
+    },
+    {
+        name: "Japan Birth Rate",
+        dataKey: "japan_birth_rate_data",
+        data: Array.from({length: 25}, (_, i) => ({
+            year: 2000+i,
+            value: Math.max(1, 10 - Math.floor(i/2))
+        }))
+    },
+
+    // 6. Nicolas Cage Movies vs Swimming Pool Drownings
+    {
+        name: "Nicolas Cage Movies",
+        dataKey: "nicolas_cage_movies_data",
+        data: Array.from({length: 25}, (_, i) => ({
+            year: 2000+i,
+            value: 1 + Math.floor(Math.random()*10)
+        }))
+    },
+    {
+        name: "Swimming Pool Drownings",
+        dataKey: "swimming_drownings_data",
+        data: Array.from({length: 25}, (_, i) => ({
+            year: 2000+i,
+            value: 1 + Math.floor(Math.random()*10)
+        }))
+    },
 ];
 
-export default DataPoints;
+export default ComboDatas;
