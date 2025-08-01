@@ -9,7 +9,7 @@ function App() {
     return (
         <div className="relative min-h-screen w-full ">
             {/* Background */}
-            <div className="absolute inset-0 -z-10">
+            <div className="fixed inset-0 -z-10 w-screen h-screen">
                 <LetterGlitch
                     glitchSpeed={50}
                     centerVignette={true}
