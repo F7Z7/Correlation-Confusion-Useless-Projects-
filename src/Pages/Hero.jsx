@@ -6,6 +6,7 @@ import ComboDatas from "../Datas/ComboDatas.jsx";
 import Button from "../components/Button.jsx";
 import {Shuffle, ChartLine, Eraser} from "lucide-react";
 import ChartComponent from "../components/ChartComponent.jsx";
+import generateAbsurdJoke from "../Datas/utils/generateAbsurdJoke.js";
 
 
 function Hero() {
@@ -13,6 +14,7 @@ function Hero() {
     const [selectedData2, setSelectedData2] = useState('');
     const [plottedData, setPlottedData] = useState({data1: null, data2: null});
     const [plotPresent, setPlotPresent] = useState(false);
+    const [advice, setAdvice] = useState('');
 
 
     const clearSelection = () => {
@@ -20,7 +22,6 @@ function Hero() {
         setSelectedData2('');
         setPlottedData({data1: null, data2: null});
         setPlotPresent(false);
-        console.log('cleared the data', setSelectedData2, setSelectedData1);
     }
     const randomSelection = () => {
         const options = ComboDatas.map(item => item.name)
@@ -32,10 +33,28 @@ function Hero() {
         setSelectedData2(randomData2);
     }
     const plotDatas = () => {
+
         const dataPoints1 = ComboDatas.find(item => item.name === selectedData1);
         const dataPoints2 = ComboDatas.find(item => item.name === selectedData2);
 
+
+        if (!dataPoints1 || !dataPoints2) {
+            alert("Please select 2 valid datasets.");
+            return;
+        }
+        else if (dataPoints1===dataPoints2) {
+            alert("Please select 2 different datasets.");
+            return;
+        }
+
         setPlotPresent(true);
+
+        setAdvice(generateAbsurdJoke(
+            selectedData1,
+            selectedData2,
+            dataPoints1.dataTrend,
+            dataPoints2.dataTrend
+        ));
 
         setPlottedData({
             data1: dataPoints1 || null,
@@ -49,7 +68,7 @@ function Hero() {
             <div
                 className="w-full max-w-2xl text-center justify-center items-center bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl p-8 ">
                 <Header title="Correlation Confusion"/>
-                <SubHeadings text="Lets the find the relationship btw something that doesn't have any relationship."/>
+                <SubHeadings text="Lets find the relationship btw something that doesn't have any relationship."/>
                 <div className="flex items-center justify-around p-3 gap-3">
                     <ComboBox placeholder="Select a data" options={ComboDatas.map(item => item.name)}
                               value={selectedData1} onChange={setSelectedData1}/>
@@ -73,10 +92,20 @@ function Hero() {
                     <ChartComponent data1={plottedData.data1} data2={plottedData.data2}/>
                 </div>
                 {plotPresent && (
-                    <div className="flex items-start ">
+                    <div className="flex flex-col items-start space-y-3">
                         <SubHeadings text="XPERT ADVICE"/>
 
+                        <p className="mt-2 text-lg italic font-vt323 text-green-400 drop-shadow-[0_0_6px_#22c55e] ">
+                            {advice}
+                        </p>
+
+                        <p className="font-vt323 text-green-400 drop-shadow-[0_0_6px_#22c55e] tracking-wide leading-relaxed">
+                            [!] Warning: Are we just being fooled by a few stray data points with no real link?
+                            Without the legend, your brain might auto-complete the pattern and see meaning where none
+                            exists.
+                        </p>
                     </div>
+
                 )}
 
             </div>
