@@ -1,12 +1,124 @@
-# React + Vite
+## Correlation Confusion Plotter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Correlation Confusion Plotter is a fun and interactive web app that lets you pick any two random datasets and visualize them together to find patterns that don’t actually exist. The goal is to humorously highlight spurious correlations by generating random plots and absurd expert advice based on the selected datasets.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+### ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Select two datasets from a predefined list.
+
+Random selection button to instantly choose two random datasets.
+
+Interactive line/scatter plot visualization of the selected data.
+
+Absurd expert advice generated automatically for your chosen datasets.
+
+Typewriter outro with a twist clock for a quirky finish.
+
+Fully responsive UI with smooth styling using TailwindCSS and React components.
+
+### 📂 Project Structure
+
+```
+📦 
+├─ .gitignore
+├─ README.md
+├─ eslint.config.js
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ public
+│  └─ favicon_image.png
+├─ src
+│  ├─ App.css
+│  ├─ App.jsx
+│  ├─ Datas
+│  │  ├─ ComboDatas.jsx
+│  │  └─ utils
+│  │     └─ generateAbsurdJoke.js
+│  ├─ Pages
+│  │  ├─ Hero.jsx
+│  │  └─ NotFound.jsx
+│  ├─ components
+│  │  ├─ Button.jsx
+│  │  ├─ ChartComponent.jsx
+│  │  ├─ ComboBox.jsx
+│  │  ├─ Header.jsx
+│  │  ├─ LetterGlitch.jsx
+│  │  ├─ OutroText.jsx
+│  │  ├─ SubHeadings.jsx
+│  │  └─ TwistClock.jsx
+│  ├─ index.css
+│  └─ main.jsx
+└─ vite.config.js
+```
+
+- Datas: Contains some  logic for generating absurd expert advice.
+
+- Pages: Includes the main Hero section and NotFound page.
+
+- Components: UI components for buttons, charts, combo boxes, headers, typewriter effects, and clocks.
+
+- Public: Contains the favicon and any static assets.
+
+### 🚀 Getting Started
+
+Follow these steps to clone, install, and run the project locally:
+
+1️⃣ Clone the repository
+
+git clone [https://github.com/your-username/correlation-confusion-plotter.git]
+
+cd correlation-confusion-plotter
+
+2️⃣ Install dependencies
+
+npm install
+
+3️⃣ Run the development server
+
+npm run dev
+
+The app will be available at http://localhost:5173 (Vite default).
+
+4️⃣ Build for production
+
+npm run build
+
+This will generate optimized static files in the dist folder.
+
+### 🛠 Tech Stack
+
+- React 18 + Vite – Frontend framework and fast bundler
+
+- TailwindCSS – Styling and responsive design
+
+- Lucide React – Icons
+
+- React Simple Typewriter – Typewriter animation
+
+- Custom Components – Interactive charting and UI elements
+
+### 💡 Example Usage
+
+- Open the app.
+
+- Select two datasets from the dropdown menus, or click Random.
+
+- Click Plot to visualize the datasets.
+
+- Read the absurd expert advice and enjoy the typewriter outro!
+
+- Click Clear Selection to start again.
+
+### 🤝 Contributing
+
+Feel free to fork this repository, open issues, or submit pull requests with new datasets, features, or fun ideas!
+
+### 📜 License
+
+This project is licensed under the MIT License.
+
+Made with ❤️ and a bit of dopamine by F7Z7.
+
