@@ -28,7 +28,7 @@ function Hero() {
 
     return (
         <div
-            className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-violet-600 via-violet-600 to-indigo-600  p-6">
+            className="flex flex-col items-center justify-center h-screen  p-6">
             <div className="w-full max-w-2xl text-center justify-center items-center bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl p-8 ">
                 <Header title="Correlation Confusion"/>
                 <SubHeadings text="Lets the find the relationship btw something that doesn't have any relationship."/>
@@ -37,11 +37,11 @@ function Hero() {
                     <ComboBox placeholder="Select a data" options={ComboDatas.map(item => item.name)} value={selectedData2} onChange={setSelectedData2} />
                 </div>
                 <div className="flex items-center justify-around p-3 gap-3">
-                    <Button text="Random" icon={Shuffle} gradient="bg-gradient-to-r from-cyan-500 to-blue-500  hover:from-blue-500 hover:to-blue-300"  onClick={randomSelection}/>
-                    <Button text="Clear Selection" icon={Eraser} gradient="bg-gradient-to-r from-red-800 to-red-500 hover:from-red-500 hover:red-300" onClick={clearSelection} />
+                    <Button text="Random" icon={Shuffle} gradient="bg-black border border-green-400 text-green-400 hover:bg-green-500 hover:text-black shadow-[0_0_15px_#22c55e]"   onClick={randomSelection}/>
+                    <Button text="Clear Selection" icon={Eraser} gradient="bg-black border border-red-400 text-red-400 hover:bg-red-500 hover:text-black shadow-[0_0_15px_#f87171]"  onClick={clearSelection} />
                 </div>
                 <div className="flex items-center justify-around p-3 gap-3">
-                    <Button text="Plot" icon={ChartLine} gradient="bg-gradient-to-r from-green-500 to-emerald-700 hover:from-green-500 hover:to-emerald-300 " />
+                    <Button text="Plot" icon={ChartLine} gradient="bg-black border border-cyan-400 text-cyan-400 hover:bg-cyan-500 hover:text-black shadow-[0_0_15px_#06b6d4]"/>
                 </div>
 
             </div>
