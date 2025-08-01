@@ -2,9 +2,9 @@ import React from 'react';
 import Header from "../components/Header.jsx";
 import SubHeadings from "../components/SubHeadings.jsx";
 import ComboBox from "../components/ComboBox.jsx";
+import ComboDatas from "../Datas/ComboDatas.jsx";
 
 function Hero() {
-    const options = ["hey", "hi", "hello"]
     return (
         <div
             className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-violet-600 via-violet-600 to-indigo-600  p-6">
@@ -12,8 +12,8 @@ function Hero() {
                 <Header title="Correlation Confusion"/>
                 <SubHeadings text="Lets the find the relationship btw something that doesn't have any relationship."/>
                 <div className="flex items-center justify-around p-3 gap-3">
-                    <ComboBox placeholder="Select a data" options={options}/>
-                    <ComboBox placeholder="Select a data" options={options}/>
+                    <ComboBox placeholder="Select a data" options={ComboDatas.map(item => item.name)}/>
+                    <ComboBox placeholder="Select a data" options={ComboDatas.map(item => item.name)}/>
                 </div>
             </div>
         </div>

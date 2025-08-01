@@ -7,8 +7,8 @@ function ComboBox({options = [], placeholder = 'Select an option...', onChange, 
         const value = event.target.value;
         setSelected(value);
         if (onChange) {
-            // Pass both the value and the option text
-            onChange(value, options[value]);
+            // Pass  the value
+            onChange(options[value]);
         }
     };
 
