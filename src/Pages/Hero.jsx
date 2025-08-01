@@ -3,6 +3,8 @@ import Header from "../components/Header.jsx";
 import SubHeadings from "../components/SubHeadings.jsx";
 import ComboBox from "../components/ComboBox.jsx";
 import ComboDatas from "../Datas/ComboDatas.jsx";
+import Button from "../components/Button.jsx";
+import { Shuffle,ChartLine,Eraser } from "lucide-react";
 
 function Hero() {
     return (
@@ -14,6 +16,11 @@ function Hero() {
                 <div className="flex items-center justify-around p-3 gap-3">
                     <ComboBox placeholder="Select a data" options={ComboDatas.map(item => item.name)}/>
                     <ComboBox placeholder="Select a data" options={ComboDatas.map(item => item.name)}/>
+                </div>
+                <div className="flex items-center justify-around p-3 gap-3">
+                    <Button text="Random" icon={Shuffle} />
+                    <Button text="Plot" icon={ChartLine} />
+                    <Button text="Clear Selection" icon={Eraser}/>
                 </div>
             </div>
         </div>
