@@ -1,26 +1,25 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from "../components/Header.jsx";
 import SubHeadings from "../components/SubHeadings.jsx";
 import ComboBox from "../components/ComboBox.jsx";
 import ComboDatas from "../Datas/ComboDatas.jsx";
 import Button from "../components/Button.jsx";
-import { Shuffle, ChartLine, Eraser } from "lucide-react";
+import {Shuffle, ChartLine, Eraser} from "lucide-react";
 import ChartComponent from "../components/ChartComponent.jsx";
 import generateAbsurdJoke from "../Datas/utils/generateAbsurdJoke.js";
 import OutroText from "../components/OutroText.jsx";
-import TwistClock from "../components/TwistClock.jsx";
 
 function Hero() {
     const [selectedData1, setSelectedData1] = useState('');
     const [selectedData2, setSelectedData2] = useState('');
-    const [plottedData, setPlottedData] = useState({ data1: null, data2: null });
+    const [plottedData, setPlottedData] = useState({data1: null, data2: null});
     const [plotPresent, setPlotPresent] = useState(false);
     const [advice, setAdvice] = useState('');
 
     const clearSelection = () => {
         setSelectedData1('');
         setSelectedData2('');
-        setPlottedData({ data1: null, data2: null });
+        setPlottedData({data1: null, data2: null});
         setPlotPresent(false);
     };
 
@@ -61,9 +60,10 @@ function Hero() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6">
-            <div className="w-full max-w-2xl text-center justify-center items-center bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl p-4 sm:p-8">
-                <Header title="Correlation Confusion" />
-                <SubHeadings text="Lets find the relationship btw something that doesn't have any relationship." />
+            <div
+                className="w-full max-w-2xl text-center justify-center items-center bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl p-4 sm:p-8">
+                <Header title="Correlation Confusion"/>
+                <SubHeadings text="Lets find the relationship btw something that doesn't have any relationship."/>
 
                 {/* ComboBoxes */}
                 <div className="flex flex-col sm:flex-row items-center justify-center p-3 gap-3">
@@ -109,7 +109,7 @@ function Hero() {
 
                 {/* Chart */}
                 <div className="mt-6 w-full overflow-x-auto">
-                    <ChartComponent data1={plottedData.data1} data2={plottedData.data2} />
+                    <ChartComponent data1={plottedData.data1} data2={plottedData.data2}/>
                 </div>
 
 
@@ -126,7 +126,8 @@ function Hero() {
                         </div>
                     </div>
                 )}
-                <TwistClock/>
+
+
             </div>
         </div>
     );
