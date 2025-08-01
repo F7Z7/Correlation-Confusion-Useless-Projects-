@@ -7,6 +7,8 @@ import Button from "../components/Button.jsx";
 import {Shuffle, ChartLine, Eraser} from "lucide-react";
 import ChartComponent from "../components/ChartComponent.jsx";
 import generateAbsurdJoke from "../Datas/utils/generateAbsurdJoke.js";
+import {Typewriter} from 'react-simple-typewriter'
+import OutroText from "../components/OutroText.jsx";
 
 
 function Hero() {
@@ -41,8 +43,7 @@ function Hero() {
         if (!dataPoints1 || !dataPoints2) {
             alert("Please select 2 valid datasets.");
             return;
-        }
-        else if (dataPoints1===dataPoints2) {
+        } else if (dataPoints1 === dataPoints2) {
             alert("Please select 2 different datasets.");
             return;
         }
@@ -100,13 +101,9 @@ function Hero() {
                             <p className="mt-2 text-lg italic">
                                 {advice}
                             </p>
-                            <p className="leading-relaxed bg-black">
-                                <span className="text-yellow-300">[!]</span> Warning: Are we just being fooled by a few
-                                stray data points with no real link?
-                                Without the legend, your brain might auto-complete the pattern and see meaning where
-                                none
-                                exists.
-                            </p>
+
+                            <OutroText/>
+
                         </div>
                     </div>
 
