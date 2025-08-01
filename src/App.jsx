@@ -5,10 +5,9 @@ import Hero from "./Pages/Hero.jsx";
 import LetterGlitch from "./components/LetterGlitch.jsx";
 
 function App() {
-    const [count, setCount] = useState(0)
 
     return (
-        <div className="relative min-h-screen w-full overflow-hidden">
+        <div className="relative min-h-screen w-full ">
             {/* Background */}
             <div className="absolute inset-0 -z-10">
                 <LetterGlitch
