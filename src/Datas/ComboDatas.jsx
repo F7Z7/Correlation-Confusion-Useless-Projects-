@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Absurd correlation datasets for Correlation Confusion
-// All values normalized to a 1–10 scale for fun visual vibe
+
 const ComboDatas = [
     // 1. UFO Sightings (1–10 scale)
     {
