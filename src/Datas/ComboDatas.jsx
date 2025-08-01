@@ -8,39 +8,7 @@ const ComboDatas = [
         name: "UFO Sightings",
         dataKey: "ufo_sightings_data",
         data: [
-            { year: 2000, value: 2 },
-            { year: 2001, value: 2 },
-            { year: 2002, value: 3 },
-            { year: 2003, value: 3 },
-            { year: 2004, value: 4 },
-            { year: 2005, value: 5 },
-            { year: 2006, value: 5 },
-            { year: 2007, value: 6 },
-            { year: 2008, value: 6 },
-            { year: 2009, value: 7 },
-            { year: 2010, value: 7 },
-            { year: 2011, value: 8 },
-            { year: 2012, value: 8 },
-            { year: 2013, value: 8 },
-            { year: 2014, value: 9 },
-            { year: 2015, value: 9 },
-            { year: 2016, value: 8 },
-            { year: 2017, value: 9 },
-            { year: 2018, value: 9 },
-            { year: 2019, value: 10 },
-            { year: 2020, value: 10 },
-            { year: 2021, value: 9 },
-            { year: 2022, value: 9 },
-            { year: 2023, value: 10 },
-            { year: 2024, value: 10 },
-        ]
-    },
 
-    // 2. Divorce Rates (inverse of UFOs for fun)
-    {
-        name: "Divorce Rates",
-        dataKey: "divorce_rates_data",
-        data: [
             { year: 2000, value: 9 },
             { year: 2001, value: 9 },
             { year: 2002, value: 8 },
@@ -66,6 +34,40 @@ const ComboDatas = [
             { year: 2022, value: 1 },
             { year: 2023, value: 1 },
             { year: 2024, value: 1 },
+        ]
+    },
+
+    // 2. Divorce Rates (inverse of UFOs for fun)
+    {
+        name: "Divorce Rates",
+        dataKey: "divorce_rates_data",
+        data: [
+            { year: 2000, value: 2 },
+            { year: 2001, value: 2 },
+            { year: 2002, value: 3 },
+            { year: 2003, value: 3 },
+            { year: 2004, value: 4 },
+            { year: 2005, value: 5 },
+            { year: 2006, value: 5 },
+            { year: 2007, value: 6 },
+            { year: 2008, value: 6 },
+            { year: 2009, value: 7 },
+            { year: 2010, value: 7 },
+            { year: 2011, value: 8 },
+            { year: 2012, value: 8 },
+            { year: 2013, value: 8 },
+            { year: 2014, value: 9 },
+            { year: 2015, value: 9 },
+            { year: 2016, value: 8 },
+            { year: 2017, value: 9 },
+            { year: 2018, value: 9 },
+            { year: 2019, value: 10 },
+            { year: 2020, value: 10 },
+            { year: 2021, value: 9 },
+            { year: 2022, value: 9 },
+            { year: 2023, value: 10 },
+            { year: 2024, value: 10 },
+
         ]
     },
 
