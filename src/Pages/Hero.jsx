@@ -92,18 +92,22 @@ function Hero() {
                     <ChartComponent data1={plottedData.data1} data2={plottedData.data2}/>
                 </div>
                 {plotPresent && (
-                    <div className="flex flex-col items-start space-y-3">
-                        <SubHeadings text="XPERT ADVICE"/>
-
-                        <p className="mt-2 text-lg italic font-vt323 text-green-400 drop-shadow-[0_0_6px_#22c55e] ">
-                            {advice}
-                        </p>
-
-                        <p className="font-vt323 text-green-400 drop-shadow-[0_0_6px_#22c55e] tracking-wide leading-relaxed">
-                            [!] Warning: Are we just being fooled by a few stray data points with no real link?
-                            Without the legend, your brain might auto-complete the pattern and see meaning where none
-                            exists.
-                        </p>
+                    <div className=" p-4 text-green-400 font-mono">
+                        <div className="flex flex-col items-start space-y-3">
+                            <h2 className="text-xl font-bold border-b-2 border-green-400">
+                                XPERT ADVICE
+                            </h2>
+                            <p className="mt-2 text-lg italic">
+                                {advice}
+                            </p>
+                            <p className="leading-relaxed bg-black">
+                                <span className="text-yellow-300">[!]</span> Warning: Are we just being fooled by a few
+                                stray data points with no real link?
+                                Without the legend, your brain might auto-complete the pattern and see meaning where
+                                none
+                                exists.
+                            </p>
+                        </div>
                     </div>
 
                 )}
