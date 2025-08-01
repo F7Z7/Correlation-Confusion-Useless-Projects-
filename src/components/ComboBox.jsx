@@ -17,7 +17,7 @@ function ComboBox({options = [], placeholder = 'Select an option...', onChange, 
             <select
                 onChange={handleSelect}
                 value={selected}
-                className=" appearance-none   bg-white/30 w-full text-white rounded-lg  px-4 py-3 pr-10 min-w-48 cursor-pointer shadow-sm  transition-colors duration-200  border border-black hover:border-white
+                className=" appearance-none bg-white/30 w-full text-white rounded-lg  px-4 py-3 pr-10 min-w-48 cursor-pointer shadow-sm  transition-colors duration-200  border border-white hover:border-white/30
                     focus:outline-none
                     focus:ring-2
                     focus:ring-blue-500
