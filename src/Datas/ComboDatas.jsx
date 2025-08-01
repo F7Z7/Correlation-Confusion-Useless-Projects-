@@ -7,6 +7,7 @@ const ComboDatas = [
     {
         name: "UFO Sightings",
         dataKey: "ufo_sightings_data",
+        dataTrend: "decreasing",
         data: [
 
             { year: 2000, value: 9 },
@@ -41,6 +42,7 @@ const ComboDatas = [
     {
         name: "Divorce Rates",
         dataKey: "divorce_rates_data",
+        dataTrend: "increasing",
         data: [
             { year: 2000, value: 2 },
             { year: 2001, value: 2 },
@@ -75,6 +77,7 @@ const ComboDatas = [
     {
         name: "Ice Cream Sales",
         dataKey: "ice_cream_sales_data",
+        dataTrend: "increasing",
         data: Array.from({length: 25}, (_, i) => ({
             year: 2000+i,
             value: Math.min(10, 2 + Math.floor(i/3))
@@ -83,6 +86,7 @@ const ComboDatas = [
     {
         name: "Shark Attacks",
         dataKey: "shark_attacks_data",
+        dataTrend: "increasing",
         data: Array.from({length: 25}, (_, i) => ({
             year: 2000+i,
             value: Math.min(10, 1 + Math.floor(i/4))
@@ -93,6 +97,7 @@ const ComboDatas = [
     {
         name: "Number of Pirates",
         dataKey: "pirates_count_data",
+        dataTrend: "decreasing",
         data: Array.from({length: 25}, (_, i) => ({
             year: 2000+i,
             value: Math.max(1, 10 - Math.floor(i/2))
@@ -101,6 +106,7 @@ const ComboDatas = [
     {
         name: "Global Avg Temperature",
         dataKey: "global_temperature_data",
+        dataTrend: "increasing",
         data: Array.from({length: 25}, (_, i) => ({
             year: 2000+i,
             value: Math.min(10, 3 + Math.floor(i/3))
@@ -111,6 +117,7 @@ const ComboDatas = [
     {
         name: "Video Game Sales",
         dataKey: "video_game_sales_data",
+        dataTrend: "increasing",
         data: Array.from({length: 25}, (_, i) => ({
             year: 2000+i,
             value: Math.min(10, 2 + Math.floor(i/2))
@@ -119,6 +126,7 @@ const ComboDatas = [
     {
         name: "Japan Birth Rate",
         dataKey: "japan_birth_rate_data",
+        dataTrend: "decreasing",
         data: Array.from({length: 25}, (_, i) => ({
             year: 2000+i,
             value: Math.max(1, 10 - Math.floor(i/2))
@@ -129,6 +137,7 @@ const ComboDatas = [
     {
         name: "Nicolas Cage Movies",
         dataKey: "nicolas_cage_movies_data",
+        dataTrend: "stable",
         data: Array.from({length: 25}, (_, i) => ({
             year: 2000+i,
             value: 1 + Math.floor(Math.random()*10)
@@ -137,6 +146,7 @@ const ComboDatas = [
     {
         name: "Swimming Pool Drownings",
         dataKey: "swimming_drownings_data",
+        dataTrend: "stable",
         data: Array.from({length: 25}, (_, i) => ({
             year: 2000+i,
             value: 1 + Math.floor(Math.random()*10)
