@@ -26,7 +26,7 @@ function OutroText() {
                         cursorStyle="_"
                         typeSpeed={40}
                         deleteSpeed={0}
-                        delaySpeed={300}
+                        delaySpeed={500}
                         loop={1}
                         onType={handleType}
                     />
