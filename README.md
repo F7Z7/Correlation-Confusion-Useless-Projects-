@@ -12,7 +12,7 @@ Correlation Confusion Plotter is a fun and interactive web app that lets you pic
 - Team Lead: Farzan R S - RIT KOTTAYAM
 - Member 2: Nil
 - Member 3: Nil
-
+---
 ### Project Description
 Correlation Confusion Plotter is a playful web app that lets users pick any two random inbuilt datasets, visualize them, and hilariously highlight spurious correlations with absurd expert advice .
 
@@ -21,7 +21,7 @@ People tend to find patterns in totally unrelated things like the golden ratio i
 
 ### The Solution (that nobody asked for)
 We solve this by plotting two unrelated datasets together and generating absurd expert interpretations. This leads us to absurd examples like as ufo sightings decreased the amount of divroce rates increased and sone
-
+---
 ## Technical Details
 ### Technologies/Components Used
 For Software:
@@ -38,7 +38,7 @@ For Hardware: Nil
 
 ### For Software:
 
-# Installation
+## Installation
 
 ``` bash
 
@@ -52,19 +52,19 @@ npm install
 
  npm run dev
 ````
-Open your browser at http://localhost:5173
+### Open your browser at http://localhost:5173
 ---
 ## ScreenShots
 ![Home Page](public/Hero_Page.png) Homepage with dataset selection dropdowns.
 ![Result Graph](public/Result.png) Example of an absurd correlation with generated expert advice.
-![Outro Text and Reverse Clock](public/Outro.png)Outro with typewriter text and twist clock that moves backwards for a quirky finish
-
+![Outro Text and Reverse Clock](public/Outro.png) Outro with typewriter text and twist clock that moves backwards for a quirky finish
+---
 ### Project Demo
 # Live Link
-Hosted on Vercel [Link] (https://correlation-confusion-useless-proje.vercel.app/)
+    Hosted on Vercel [Link](https://correlation-confusion-useless-proje.vercel.app/)
 
 ### Team Contributions
-- Farzan R S: Full Work
+- Farzan R S: Idea BrainStorming,Coding,Ui Implementation
 
 
 Made with ❤️ at TinkerHub Useless Projects 
