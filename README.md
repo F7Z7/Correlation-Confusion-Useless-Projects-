@@ -28,7 +28,7 @@ We solve this by plotting two unrelated datasets together and generating absurd 
 For Software:
 - Javascript
 - React 18, Vite
-- TailwindCSS, Lucide React, React Simple Typewriter,React Bits(for generation of background)
+- TailwindCSS, Lucide React, React Simple Typewriter,Chart js,React Bits(for generation of background)
 - Webstorm,Github,Npm,Vercel
 
 For Hardware: Nil
