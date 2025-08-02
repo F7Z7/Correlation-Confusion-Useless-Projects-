@@ -1,6 +1,59 @@
-## Correlation Confusion Plotter
+# Correlation Confusion Plotter
 
 Correlation Confusion Plotter is a fun and interactive web app that lets you pick any two random datasets and visualize them together to find patterns that don’t actually exist. The goal is to humorously highlight spurious correlations by generating random plots and absurd expert advice based on the selected datasets.
+
+## Basic Details
+### Team Name: Trade Jacks
+
+
+### Team Members
+- Team Lead: Farzan R S - RIT KOTTAYAM
+- Member 2: Nil
+- Member 3: Nil
+
+### Project Description
+Correlation Confusion Plotter is a playful web app that lets users pick any two random inbuilt datasets, visualize them, and hilariously highlight spurious correlations with absurd expert advice .
+
+### The Problem (that doesn't exist)
+People tend to find patterns in totally unrelated things like the golden ratio in random images etc! I took this seriousliy and decided to plot something totally unrelated and add an expert advice
+
+### The Solution (that nobody asked for)
+We solve this by plotting two unrelated datasets together and generating absurd expert interpretations. This leads us to absurd examples like as ufo sightings decreased the amount of divroce rates increased and sone
+
+## Technical Details
+### Technologies/Components Used
+For Software:
+- Javascript
+- React 18, Vite
+- TailwindCSS, Lucide React, React Simple Typewriter,React Bits(for generation of background)
+- Webstorm,Github,Npm
+
+For Hardware: Nil
+
+---
+
+### Implementation
+
+### For Software:
+
+# Installation
+
+``` bash
+
+git clone https://github.com/F7Z7/Correlation-Confusion-Useless-Projects-.git
+cd correlation-confusion-useless-projects
+npm install
+````
+---
+## Run
+````bash
+
+ npm run dev
+````
+Open your browser at http://localhost:5173
+---
+## ScreenShots
+![Home Page](public/Hero_Page.png) Homepage with dataset selection dropdowns.
 
 
 
