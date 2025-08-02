@@ -26,10 +26,10 @@ We solve this by plotting two unrelated datasets together and generating absurd 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- Javascript
-- React 18, Vite
-- TailwindCSS, Lucide React, React Simple Typewriter,Chart js,React Bits(for generation of background)
-- Webstorm,Github,Npm,Vercel
+- Languages: Javascript
+- FrameWorks : React 18, Vite
+- Libraries : TailwindCSS, Lucide React, React Simple Typewriter,Chart js,React Bits(for generation of background)
+- Tools : Webstorm,Github,Npm,Vercel
 
 For Hardware: Nil
 
