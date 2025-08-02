@@ -61,10 +61,10 @@ Open your browser at http://localhost:5173
 
 ### Project Demo
 # Live Link
-[https://correlation-confusion-useless-proje.vercel.app/]
+Hosted on Vercel [Link] (https://correlation-confusion-useless-proje.vercel.app/)
 
 ### Team Contributions
-- [Farzan R S]: [Full Work]
+- Farzan R S: Full Work
 
 
 Made with ❤️ at TinkerHub Useless Projects 
