@@ -54,6 +54,8 @@ Open your browser at http://localhost:5173
 ---
 ## ScreenShots
 ![Home Page](public/Hero_Page.png) Homepage with dataset selection dropdowns.
+![Result Graph](public/Result.png) Example of an absurd correlation with generated expert advice.
+![Outro Text and Reverse Clock](public/Outro.png)Outro with typewriter text and twist clock that moves backwards for a quirky finish
 
 
 
