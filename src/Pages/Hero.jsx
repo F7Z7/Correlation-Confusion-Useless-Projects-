@@ -117,7 +117,7 @@ function Hero() {
                     <div className="p-4 text-green-400 font-mono mt-4 sm:mt-6 w-full overflow-x-auto">
                         <div className="flex flex-col items-start space-y-3">
                             <h2 className="text-lg sm:text-xl font-bold border-b-2 border-green-400">
-                                XPERT ADVICE
+                                EXPERT ADVICE
                             </h2>
                             <p className="mt-2 text-base sm:text-lg italic break-words">
                                 {advice}
