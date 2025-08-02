@@ -20,7 +20,8 @@ Correlation Confusion Plotter is a playful web app that lets users pick any two 
 People tend to find patterns in totally unrelated things like the golden ratio in random images etc! I took this seriousliy and decided to plot something totally unrelated and add an expert advice
 
 ### The Solution (that nobody asked for)
-We solve this by plotting two unrelated datasets together and generating absurd expert interpretations. This leads us to absurd examples like as ufo sightings decreased the amount of divroce rates increased and sone
+We solve this by plotting two unrelated datasets together and generating absurd expert interpretations. This leads us to absurd examples like as ufo sightings decreased the amount of divroce rates increased and so on
+
 ---
 ## Technical Details
 ### Technologies/Components Used
@@ -28,7 +29,7 @@ For Software:
 - Javascript
 - React 18, Vite
 - TailwindCSS, Lucide React, React Simple Typewriter,React Bits(for generation of background)
-- Webstorm,Github,Npm
+- Webstorm,Github,Npm,Vercel
 
 For Hardware: Nil
 
@@ -61,10 +62,11 @@ npm install
 ---
 ### Project Demo
 # Live Link
-    Hosted on Vercel [Link](https://correlation-confusion-useless-proje.vercel.app/)
+
+Hosted on Vercel [Link](https://correlation-confusion-useless-proje.vercel.app/)
 
 ### Team Contributions
-- Farzan R S: Idea BrainStorming,Coding,Ui Implementation
+- Farzan R S: Idea BrainStorming,Coding,Ui Implementation and functionalities
 
 
 Made with ❤️ at TinkerHub Useless Projects 
